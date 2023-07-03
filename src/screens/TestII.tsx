@@ -12,16 +12,6 @@ export const TestII = ({ navigation }: Props) => {
                 Test II
             </Text>
 
-            <TouchableOpacity style={styles.touchableStyle} activeOpacity={0.8}
-                // This onPress attribute will address to LoginForm using Stack.Navigator
-                onPress={() => navigation.replace('Test')}
-            >
-                <Text style={styles.button} >Go Back...</Text>
-
-            </TouchableOpacity>
-
-
-
         </View>
     )
 }
