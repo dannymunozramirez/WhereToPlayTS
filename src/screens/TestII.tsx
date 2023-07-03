@@ -1,20 +1,27 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+
 
 interface Props extends StackScreenProps<any, any> { }
 
-export const Test = ({ navigation }: Props) => {
-
+export const TestII = ({ navigation }: Props) => {
     return (
         <View>
+            <Text>
+                Test II
+            </Text>
+
             <TouchableOpacity style={styles.touchableStyle} activeOpacity={0.8}
                 // This onPress attribute will address to LoginForm using Stack.Navigator
-                onPress={() => navigation.replace('TestII')}
+                onPress={() => navigation.replace('Test')}
             >
                 <Text style={styles.button} >Go Back...</Text>
 
             </TouchableOpacity>
+
+
+
         </View>
     )
 }
