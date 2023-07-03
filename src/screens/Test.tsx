@@ -11,7 +11,7 @@ export const Test = ({ navigation }: Props) => {
       <TouchableOpacity
         style={styles.touchableStyle}
         activeOpacity={0.8}
-        onPress={() => navigation.replace('Login')}
+        onPress={() => navigation.replace('LoginForm')}
       >
         <Text style={styles.button}>Go Back!!!</Text>
       </TouchableOpacity>
