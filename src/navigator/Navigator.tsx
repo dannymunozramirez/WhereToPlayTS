@@ -21,9 +21,9 @@ export const Navigator = () => {
 const TabNavigator = () => {
     return (
         <Tab.Navigator>
-            <Tab.Screen name="Test" component={Test} />
-            <Tab.Screen name="TesII" component={TestII} />
-            <Tab.Screen name="TestIII" component={TestIII} />
+            <Tab.Screen name="Activities" component={Test} />
+            <Tab.Screen name="My Team" component={TestII} />
+            <Tab.Screen name="Games" component={TestIII} />
         </Tab.Navigator>
     );
 };
