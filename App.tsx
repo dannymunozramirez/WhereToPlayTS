@@ -7,7 +7,6 @@ export const App = () => {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-
         <Navigator />
       </NavigationContainer>
     </View>

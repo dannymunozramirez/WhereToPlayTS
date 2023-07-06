@@ -7,7 +7,7 @@ import { GameInterface, UserInterface } from '../interfaces/Interfaces';
 
 interface Props extends StackScreenProps<any, any> { }
 
-export const Test = ({ navigation }: Props) => {
+export const Test = ({ navigation, route }: Props) => {
 
   const [users, setUsers] = useState<UserInterface[]>([
     {
@@ -58,7 +58,7 @@ export const Test = ({ navigation }: Props) => {
         data={games}
         renderItem={(itemData) => {
 
-          return <EventCard user={itemData.item.organizer} game={itemData.item} />;
+          return <EventCard user={itemData.item.organizer} game={itemData.item} navigation={navigation} route={route} />;
         }}
         // It wants a function as a value it automatically receive two parameter
         // items and index. It will get a item key and it will attach that key (id) to the item

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.8",
+    "@react-navigation/drawer": "^6.6.3",
     "@react-navigation/material-bottom-tabs": "^6.2.16",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",
@@ -18,10 +19,13 @@
     "native-base": "^3.4.28",
     "react": "18.1.0",
     "react-native": "0.70.10",
+    "react-native-bottom-drawer": "^1.0.2",
     "react-native-gesture-handler": "^2.12.0",
+    "react-native-modal": "^13.0.1",
     "react-native-paper": "^5.9.0",
+    "react-native-reanimated": "^3.3.0",
     "react-native-safe-area-context": "^3.3.2",
-    "react-native-screens": "^3.22.0",
+    "react-native-screens": "^3.22.1",
     "react-native-svg": "^12.1.1",
     "react-native-vector-icons": "^9.2.0"
   },
