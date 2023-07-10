@@ -13,3 +13,8 @@ export interface GameInterface {
     address: string;
 }
 
+export interface TeamInterface {
+    id: string;
+    name: string;
+}
+

@@ -1,13 +1,16 @@
-import { NavigationContainer } from '@react-navigation/native'
+import 'react-native-gesture-handler';
 import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 import { StyleSheet, View } from 'react-native';
 import { Navigator } from './src/navigator/Navigator';
+import { SideMenu } from './src/navigator/SideMenu';
 
 export const App = () => {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-        <Navigator />
+        {/* <Navigator /> */}
+        <SideMenu />
       </NavigationContainer>
     </View>
 

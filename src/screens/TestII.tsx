@@ -1,15 +1,17 @@
 import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { TeamInterface } from '../interfaces/Interfaces';
 
 
 interface Props extends StackScreenProps<any, any> { }
 
 export const TestII = ({ navigation }: Props) => {
     return (
-        <View>
-            <Text>
-                Test II
+        <View >
+            <Text style={styles.text}>
+                Team
+
             </Text>
 
         </View>
@@ -26,5 +28,8 @@ const styles = StyleSheet.create({
     },
     touchableStyle: {
         marginBottom: 20
+    },
+    text: {
+        fontSize: 24
     }
 })
