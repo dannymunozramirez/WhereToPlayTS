@@ -35,7 +35,7 @@ export const LoginForm = ({ navigation }: Props) => {
         //     console.error(error);
         // })
 
-        navigation.replace('TabNavigator')
+        navigation.replace('MainNavigator')
     }
 
     return (

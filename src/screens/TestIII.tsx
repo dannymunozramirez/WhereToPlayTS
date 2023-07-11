@@ -5,7 +5,7 @@ export const TestIII = () => {
   return (
     <View>
         <Text>
-            Test III
+            Test III - UPDATED
         </Text>
     </View>
   )

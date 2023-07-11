@@ -19,7 +19,6 @@ export const Login = ({ navigation }: Props) => {
                 >
                     <Text style={styles.button}>Go!!!</Text>
                 </TouchableOpacity>
-                <Navigator/>
             </SafeAreaView>
         </View>
     );
