@@ -9,6 +9,8 @@ import React from 'react';
 import GameDetails from '../screens/GameDetails';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 
 const Stack = createStackNavigator();
@@ -55,15 +57,15 @@ export const TabNavigatorTestII = () => {
                 ),
             }} />
             <Tab.Screen name="My Team" component={TestII} options={{
-                tabBarLabel: 'Updates',
+                tabBarLabel: 'My Team',
                 tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="bell" color={color} size={26} />
+                    <AntDesign name="team" color={color} size={26} />
                 ),
             }} />
             <Tab.Screen name="Games" component={TestIII} options={{
-                tabBarLabel: 'Profile',
+                tabBarLabel: 'Games',
                 tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="account" color={color} size={26} />
+                    <MaterialIcons name="sports" color={color} size={26} />
                 ),
             }} />
         </MaterialTab.Navigator>
@@ -116,9 +118,15 @@ const MainNavigator = () => {
         <Drawer.Navigator screenOptions={{
             drawerPosition: 'left'
         }} initialRouteName='TabNavigator'>
-            <Drawer.Screen name='TabNavigator' component={TabNavigator} />
-            <Drawer.Screen name='TestII' component={TabNavigatorTestII} />
+            <Drawer.Screen name='Home' component={TabNavigator} />
+            <Drawer.Screen name='My Team' component={TabNavigatorTestII} />
             <Drawer.Screen name='TestIII' component={TabNavigatorTestIII} />
+
+            <Drawer.Screen name='Local Tournament' component={TabNavigatorTestII} />
+            <Drawer.Screen name='Challenge' component={TabNavigatorTestIII} />
+
+            <Drawer.Screen name='Ranking' component={TabNavigatorTestII} />
+            <Drawer.Screen name='Store' component={TabNavigatorTestIII} />
         </Drawer.Navigator>
     );
 };

@@ -55,6 +55,7 @@ export const Test = ({ navigation, route }: Props) => {
     <View style={styles.screen}>
 
       <FlatList
+        centerContent
         data={games}
         renderItem={(itemData) => {
 
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   touchableStyle: {
-    marginBottom: 20,
+    marginBottom: 5,
   },
   screen: {
     flex: 1

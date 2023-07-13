@@ -1,7 +1,7 @@
 import { RouteProp } from '@react-navigation/native';
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
-import { SafeAreaView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, SafeAreaView, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Text } from 'react-native-paper';
 import { GameInterface } from '../interfaces/Interfaces';
 
@@ -20,19 +20,26 @@ const GameDetails = ({ route, navigation }: Props) => {
     const { game } = route.params;
 
     return (
-        <SafeAreaView>
+        <SafeAreaView >
             <View style={styles.screen}>
-                <Text>Game Details:</Text>
-                <Text>Game Name: {game.name}</Text>
-                <Text>Organizer: {game.organizer.name}</Text>
-
-                <TouchableOpacity
-                    style={styles.touchableStyle}
-                    activeOpacity={0.8}
-                    onPress={() => navigation.goBack()}
+                <ImageBackground
+                    source={{ uri: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80' }} // Replace with the actual image URL
+                    style={styles.backgroundImage}
                 >
-                    <Text style={styles.button}>Go Back!!!</Text>
-                </TouchableOpacity>
+
+                    <Text style={styles.detailsTextTitle}>Game Details</Text>
+                    <Text style={styles.detailsText}>Game Name: {game.name}</Text>
+                    <Text style={styles.detailsText}>Organizer: {game.organizer.name}</Text>
+
+                    <TouchableOpacity
+                        style={styles.touchableStyle}
+                        activeOpacity={0.8}
+                        onPress={() => navigation.goBack()}
+                    >
+                        <Text style={styles.button}>Go Back!!!</Text>
+                    </TouchableOpacity>
+
+                </ImageBackground>
             </View>
         </SafeAreaView>
     );
@@ -43,20 +50,41 @@ export default React.memo(GameDetails);
 const styles = StyleSheet.create({
     button: {
         // borderWidth: 2,
-        backgroundColor: 'white',
+        backgroundColor: '#71B220',
         paddingHorizontal: 20,
         paddingVertical: 5,
         borderRadius: 100,
-        marginTop: 50,
+        marginTop: 450,
+        borderBottomLeftRadius: 20,
     },
     touchableStyle: {
         marginBottom: 20,
     },
     screen: {
+        // flex: 1,
+        // marginTop: 50,
+        // backgroundColor: 'lightgreen',
+        // paddingHorizontal: 20,
+        // paddingVertical: 5,
+    },
+    backgroundImage: {
         flex: -1,
-        marginTop: 50,
-        backgroundColor: 'lightgreen',
-        paddingHorizontal: 20,
-        paddingVertical: 5,
+        marginTop: 100,
+        height: 500
+        // resizeMode: 'cover',
+        // justifyContent: 'center',
+    },
+    detailsText: {
+        color: '#6120B2',
+        fontWeight: 'bold',
+        fontSize: 20,
+        margin: 5
+    },
+    detailsTextTitle: {
+        textAlign: 'center',
+        color: '#B22028',
+        fontWeight: 'bold',
+        fontSize: 20,
+        margin: 5
     }
 });
