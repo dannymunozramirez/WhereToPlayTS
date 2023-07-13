@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         margin: 8,
         padding: 8,
         borderRadius: 6,
-        backgroundColor: 'blue',
+        backgroundColor: '#20B261',
     },
     goalText: {
         color: 'white',
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     closeButton: {
         marginTop: 20,
         alignSelf: 'center',
-        backgroundColor: 'blue',
+        backgroundColor: '#20B261',
         padding: 10,
         borderRadius: 6,
     },

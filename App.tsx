@@ -7,11 +7,9 @@ import { Navigator } from './src/navigator/Navigator';
 export const App = () => {
   return (
 
-    // Login Screen have to have Navigator container and here just render Login
     <View style={styles.container}>
       <NavigationContainer>
         <Navigator />
-        {/* <SideMenu /> */}
       </NavigationContainer>
     </View>
 
