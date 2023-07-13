@@ -9,15 +9,10 @@ interface Props extends StackScreenProps<any, any> {
 }
 
 export const EventCard = ({ user, game, navigation }: Props) => {
-    const [modalVisible, setModalVisible] = useState(false);
-
     const handlePress = () => {
-        setModalVisible(true);
-    };
-
-    const closeModal = () => {
-        setModalVisible(false);
-    };
+        navigation.navigate('GameDetails', { game });
+      };
+      
 
     return (
         <View>
@@ -30,24 +25,6 @@ export const EventCard = ({ user, game, navigation }: Props) => {
                     </View>
                 </View>
             </Pressable>
-
-            <Modal
-                visible={modalVisible}
-                animationType="slide"
-                transparent={true}
-                onRequestClose={closeModal}
-            >
-                <View style={styles.modalContainer}>
-                    <View style={styles.modalContent}>
-                        <Text style={styles.modalText}>Modal Content</Text>
-                        <Text style={styles.modalText}>Game Name: {game.name}</Text>
-                        <Text style={styles.modalText}>Organizer: {user.name}</Text>
-                        <Pressable onPress={closeModal} style={styles.closeButton}>
-                            <Text style={styles.closeButtonText}>Close</Text>
-                        </Pressable>
-                    </View>
-                </View>
-            </Modal>
         </View>
     );
 };
@@ -72,6 +49,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        // backgroundColor:'white'
     },
     modalContent: {
         backgroundColor: 'white',

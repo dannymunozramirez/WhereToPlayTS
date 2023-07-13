@@ -6,6 +6,7 @@ import { TestII } from '../screens/TestII';
 import { TestIII } from '../screens/TestIII';
 import { LoginForm } from '../screens/LoginForm';
 import React from 'react';
+import GameDetails from '../screens/GameDetails';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -48,6 +49,9 @@ export const Navigator = () => {
             <Stack.Screen name="MainNavigator" component={MainNavigator} />
             <Stack.Screen name="Test" component={Test} />
             <Stack.Screen name="TestII" component={TestII} />
+            <Stack.Screen name="GameDetails">
+                {(props:any) => <GameDetails {...props} />}
+            </Stack.Screen>
         </Stack.Navigator>
     );
 };
