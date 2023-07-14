@@ -7,7 +7,7 @@ import { GameInterface, UserInterface } from '../interfaces/Interfaces';
 
 interface Props extends StackScreenProps<any, any> { }
 
-export const Test = ({ navigation, route }: Props) => {
+export const ActivitiesScreen = ({ navigation, route }: Props) => {
 
   const [users, setUsers] = useState<UserInterface[]>([
     {

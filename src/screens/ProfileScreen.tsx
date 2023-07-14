@@ -1,11 +1,11 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-export const TestIV = () => {
+export const ProfileScreen = () => {
     return (
         <View>
             <Text>
-                Test IV
+                Profile - Screen
             </Text>
         </View>
     )

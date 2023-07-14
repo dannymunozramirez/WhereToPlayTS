@@ -17,13 +17,15 @@ interface Props extends StackScreenProps<any, any> {
 
 
 const GameDetails = ({ route, navigation }: Props) => {
+    const uriSoccer = 'https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80'
     const { game } = route.params;
 
     return (
         <SafeAreaView >
             <View style={styles.screen}>
+
                 <ImageBackground
-                    source={{ uri: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80' }} // Replace with the actual image URL
+                    source={{ uri: `${game.organizer.name == 'User I' ? uriSoccer : 'https://www.lboro.ac.uk/media/wwwlboroacuk/external/content/research/sti/slide1.png'}` }}
                     style={styles.backgroundImage}
                 >
 

@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { StyleSheet, View } from 'react-native';
+import { SideMenu } from './src/navigator/SideMenu';
 import { Navigator } from './src/navigator/Navigator';
 
 export const App = () => {
@@ -10,6 +11,7 @@ export const App = () => {
     <View style={styles.container}>
       <NavigationContainer>
         <Navigator />
+        {/* <SideMenu/> */}
       </NavigationContainer>
     </View>
 

@@ -3,16 +3,16 @@ import { StackScreenProps } from '@react-navigation/stack'
 import React from 'react'
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { TeamInterface } from '../interfaces/Interfaces';
-import { Navigator } from '../navigator/Navigator';
+// import { Navigator } from '../navigator/Navigator';
 
 
 interface Props extends StackScreenProps<any, any> { }
 
-export const TestII = ({ navigation }: Props) => {
+export const MyTeam = ({ navigation }: Props) => {
     return (
         <View >
             <Text style={styles.text}>
-                TEST II - UPDATED
+                MyTeam - Screen
 
             </Text>
 

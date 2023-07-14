@@ -9,6 +9,8 @@ interface Props extends StackScreenProps<any, any> {
 }
 
 export const EventCard = ({ user, game, navigation }: Props) => {
+    const uriSoccer = 'https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80'
+
     const handlePress = () => {
         navigation.navigate('GameDetails', { game });
     };
@@ -21,7 +23,7 @@ export const EventCard = ({ user, game, navigation }: Props) => {
                 <View style={styles.userContainer}>
                     <View style={styles.goalItem}>
                         <ImageBackground
-                            source={{ uri: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80' }} // Replace with the actual image URL
+                            source={{ uri: `${game.organizer.name == 'User I' ? uriSoccer : 'https://www.lboro.ac.uk/media/wwwlboroacuk/external/content/research/sti/slide1.png'}` }}
                             style={styles.backgroundImage}
                         >
 
@@ -86,6 +88,6 @@ const styles = StyleSheet.create({
         flex: 1,
         resizeMode: 'cover',
         justifyContent: 'center',
-        position:'relative'
+        position: 'relative'
     },
 });
