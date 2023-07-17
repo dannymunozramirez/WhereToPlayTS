@@ -8,7 +8,7 @@ interface Props extends StackScreenProps<any, any> {
 }
 
 export const PresseableCard = ({ game, navigation }: Props) => {
-    const gradientColors = ['lightgreen', 'lightblue'];
+
     const handlePress = () => {
         navigation.navigate('GameDetails', { game });
     };
@@ -20,16 +20,7 @@ export const PresseableCard = ({ game, navigation }: Props) => {
                     isFocused,
                     isPressed
                 }) => {
-                    return 
-                //     <LinearGradient
-                //     colors={gradientColors}
-                //     style={{
-                //       borderRadius: 8,
-                //       overflow: 'hidden', // Ensure the gradient stays within the rounded corners
-                //       transform: [{ scale: isPressed ? 0.96 : 1 }],
-                //     }}
-                //   > 
-                  <Box maxW="96" borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? 'coolGray.200' : isHovered ? 'coolGray.200' : 'coolGray.100'} p="5" rounded="8" style={{
+                    return  <Box maxW="96" borderWidth="1" borderColor="coolGray.300" shadow="3" bg={isPressed ? 'coolGray.200' : isHovered ? 'coolGray.200' : 'coolGray.100'} p="5" rounded="8" style={{
                         backgroundColor:'lightgreen',
                         margin:5,
                         transform: [{
@@ -67,8 +58,7 @@ export const PresseableCard = ({ game, navigation }: Props) => {
                                 Read More go GameDetails
                             </Text>}
                         </Flex>
-                    </Box>
-                    // </LinearGradient>
+                    </Box>;
                 }}
             </Pressable></View>
     )
