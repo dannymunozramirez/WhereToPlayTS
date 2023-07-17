@@ -2,6 +2,7 @@ import { StackScreenProps } from '@react-navigation/stack';
 import { Box, Divider, Flex, NativeBaseProvider } from 'native-base';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Pressable, Modal, ImageBackground, Image } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import { GameInterface, UserInterface } from '../interfaces/Interfaces';
 import { PresseableCard } from './PresseableCard';
 
@@ -16,11 +17,12 @@ export const EventCard = ({ game, navigation, route }: Props) => {
     const handlePress = () => {
         navigation.navigate('GameDetails', { game });
     };
-
+    const gradientColors = ['white', 'lightblue'];
     
 
     return (
-        <View>
+        <View style={{backgroundColor:'white'}}>
+            <LinearGradient colors={gradientColors}>
             {/* <Pressable onPress={handlePress}> */}
 
                 {/* <View style={styles.userContainer}>
@@ -58,6 +60,7 @@ export const EventCard = ({ game, navigation, route }: Props) => {
                     <PresseableCard game={game} navigation={navigation} route={route} />
                 </NativeBaseProvider>
             {/* </Pressable> */}
+            </LinearGradient>
         </View>
     );
 };
