@@ -64,3 +64,58 @@ export const BottomTabsTournament = () => {
         </MaterialTab.Navigator>
     );
 };
+
+export const BottomTabsChallenge = () => {
+    return (
+        <MaterialTab.Navigator
+            activeColor="#2071B2"
+            barStyle={{ backgroundColor: 'lightseagreen' }}>
+            <Tab.Screen name="Activities" component={NavigatorScreens} options={{
+                tabBarLabel: 'Challenge Activity',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="home" color={color} size={22} />
+                ),
+            }} />
+            <Tab.Screen name="My Team" component={MyTeam} options={{
+                tabBarLabel: 'Challenge',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="bell" color={color} size={22} />
+                ),
+            }} />
+            <Tab.Screen name="ProfileScreen" component={ProfileScreen} options={{
+                tabBarLabel: 'Profile',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="account" color={color} size={22} />
+                ),
+            }} />
+        </MaterialTab.Navigator>
+    );
+};
+
+
+export const BottomTabsOrganizer = () => {
+    return (
+        <MaterialTab.Navigator
+            activeColor="#2071B2"
+            barStyle={{ backgroundColor: 'lightseagreen' }}>
+            <Tab.Screen name="Activities" component={NavigatorScreens} options={{
+                tabBarLabel: 'Game activities',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="home" color={color} size={22} />
+                ),
+            }} />
+            <Tab.Screen name="My Team" component={MyTeam} options={{
+                tabBarLabel: 'Games organized',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="bell" color={color} size={22} />
+                ),
+            }} />
+            <Tab.Screen name="ProfileScreen" component={ProfileScreen} options={{
+                tabBarLabel: 'Profile',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="account" color={color} size={22} />
+                ),
+            }} />
+        </MaterialTab.Navigator>
+    );
+};

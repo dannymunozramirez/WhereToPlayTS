@@ -9,7 +9,7 @@ export const App = () => {
   return (
 
     <View style={styles.container}>
-      <NavigationContainer>
+      <NavigationContainer >
         <Navigator />
         {/* <SideMenu/> */}
       </NavigationContainer>
@@ -22,6 +22,6 @@ export const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white', // Set your desired background color here
+    backgroundColor: 'black', // Set your desired background color here
   },
 });
