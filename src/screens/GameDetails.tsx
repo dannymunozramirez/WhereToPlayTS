@@ -44,7 +44,7 @@ const GameDetails = ({ route, navigation }: Props) => {
                     <TouchableOpacity
                         style={styles.touchableStyle}
                         activeOpacity={0.8}
-                        onPress={() => navigation.goBack()}
+                        onPress={() => navigation.goBack()}//GO BACK TO EventCard.TSX
                     >
                         <Text style={styles.button}>Go Back!!!</Text>
                     </TouchableOpacity>
