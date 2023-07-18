@@ -16,7 +16,7 @@ export const PresseableCard = ({ game, navigation }: Props) => {
         navigation.navigate('GameDetails', { game });
     };
 
-    const gradientColors = ['#2071B0', 'lightgreen'];
+    const gradientColors = ['#71C9CE', '#E3FDFD'];
 
     return (
         <Pressable onPress={handlePress}>

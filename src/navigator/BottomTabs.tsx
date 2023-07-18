@@ -45,7 +45,7 @@ export const BottomTabsTournament = () => {
     return (
         <MaterialTab.Navigator
             activeColor="#2071B2"
-            barStyle={{ backgroundColor: 'lightseagreen' }}>
+            barStyle={{ backgroundColor: '#9DF3C4' }}>
             <Tab.Screen name="Activities" component={NavigatorScreens} options={{
                 tabBarLabel: 'Tournament',
                 tabBarIcon: ({ color }) => (
@@ -72,7 +72,7 @@ export const BottomTabsChallenge = () => {
     return (
         <MaterialTab.Navigator
             activeColor="#2071B2"
-            barStyle={{ backgroundColor: 'lightgreen' }}>
+            barStyle={{ backgroundColor: 'lightseagreen' }}>
             <Tab.Screen name="Activities" component={ChallengeAct} options={{
                 tabBarLabel: 'Challenge Activity',
                 tabBarIcon: ({ color }) => (

@@ -9,7 +9,7 @@ interface Props extends StackScreenProps<any, any> { }
 
 export const ActivitiesScreen = ({ navigation, route }: Props) => {
 
-  const gradientColors = ['lightblue', '#2071B2'];
+  const gradientColors = ['#D7FBE8', '#62D2A2'];
 
   const [users, setUsers] = useState<UserInterface[]>([
     {
