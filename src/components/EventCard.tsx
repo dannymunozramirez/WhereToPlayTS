@@ -21,8 +21,8 @@ export const EventCard = ({ game, navigation, route }: Props) => {
     
 
     return (
-        <View style={{backgroundColor:'white'}}>
-            <LinearGradient colors={gradientColors}>
+        <View style={{margin:1}}>
+            {/* <LinearGradient colors={gradientColors}> */}
             {/* <Pressable onPress={handlePress}> */}
 
                 {/* <View style={styles.userContainer}>
@@ -60,7 +60,7 @@ export const EventCard = ({ game, navigation, route }: Props) => {
                     <PresseableCard game={game} navigation={navigation} route={route} />
                 </NativeBaseProvider>
             {/* </Pressable> */}
-            </LinearGradient>
+            {/* </LinearGradient> */}
         </View>
     );
 };

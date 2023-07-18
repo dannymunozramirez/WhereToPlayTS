@@ -4,17 +4,21 @@ import { NavigationContainer } from '@react-navigation/native'
 import { StyleSheet, View } from 'react-native';
 import { SideMenu } from './src/navigator/SideMenu';
 import { Navigator } from './src/navigator/Navigator';
+import LinearGradient from 'react-native-linear-gradient';
 
 export const App = () => {
+
+  const gradientColors = ['lightgreen', 'transparent'];
+
   return (
-
-    <View style={styles.container}>
-      <NavigationContainer >
-        <Navigator />
-        {/* <SideMenu/> */}
-      </NavigationContainer>
-    </View>
-
+    <>
+      <View style={styles.container}>
+        <NavigationContainer >
+          <Navigator />
+          {/* <SideMenu/> */}
+        </NavigationContainer>
+      </View>
+    </>
 
   )
 }
@@ -22,6 +26,6 @@ export const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black', // Set your desired background color here
+    // backgroundColor: 'black', // Set your desired background color here
   },
 });

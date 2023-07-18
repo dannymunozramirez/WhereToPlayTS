@@ -9,11 +9,14 @@ interface Props extends StackScreenProps<any, any> {
 }
 
 export const PresseableCard = ({ game, navigation }: Props) => {
+
+    const uriSoccer = 'https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80'
+
     const handlePress = () => {
         navigation.navigate('GameDetails', { game });
     };
 
-    const gradientColors = ['lightgreen', 'transparent'];
+    const gradientColors = ['#2071B0', 'lightgreen'];
 
     return (
         <Pressable onPress={handlePress}>
@@ -58,10 +61,10 @@ export const PresseableCard = ({ game, navigation }: Props) => {
                                         </Text>
                                     </HStack>
                                     <Text color="coolGray.800" mt="3" fontWeight="medium" fontSize="xl">
-                                        Game Title
+                                        {game.name}
                                     </Text>
                                     <Text mt="2" fontSize="sm" color="coolGray.700">
-                                        Simple game description
+                                        {game.organizer.name}
                                     </Text>
                                     <Flex>
                                         {isFocused ? (
@@ -80,7 +83,7 @@ export const PresseableCard = ({ game, navigation }: Props) => {
                             {/* Picture on the right side */}
                             <Image
                                 source={{
-                                    uri: "https://images.unsplash.com/photo-1551958219-acbc608c6377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
+                                    uri: uriSoccer,
                                 }}
                                 alt="Fallback text"
                                 style={{

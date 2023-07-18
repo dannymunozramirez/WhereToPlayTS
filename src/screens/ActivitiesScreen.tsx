@@ -1,13 +1,15 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React, { useState } from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import { EventCard } from '../components/EventCard';
-import { User } from '../components/User';
 import { GameInterface, UserInterface } from '../interfaces/Interfaces';
 
 interface Props extends StackScreenProps<any, any> { }
 
 export const ActivitiesScreen = ({ navigation, route }: Props) => {
+
+  const gradientColors = ['lightblue', '#2071B2'];
 
   const [users, setUsers] = useState<UserInterface[]>([
     {
@@ -52,31 +54,44 @@ export const ActivitiesScreen = ({ navigation, route }: Props) => {
     }])
 
   return (
-    <View style={styles.screen}>
+    <>
+      <View style={styles.screen}>
+        <LinearGradient
+          colors={gradientColors}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={{
+            borderTopLeftRadius: 4,
+            borderBottomLeftRadius: 4,
+            flex:1
 
-      <FlatList
-        centerContent
-        data={games}
-        renderItem={(itemData) => {
+          }}
+        >
+          <FlatList
+            centerContent
+            data={games}
+            renderItem={(itemData) => {
 
-          return <EventCard user={itemData.item.organizer} game={itemData.item} navigation={navigation} route={route} />;
-        }}
-        // It wants a function as a value it automatically receive two parameter
-        // items and index. It will get a item key and it will attach that key (id) to the item
-        // rendered within the FlatList.
-        keyExtractor={(item) => {
-          return item.id;
-        }}
-      />
+              return <EventCard user={itemData.item.organizer} game={itemData.item} navigation={navigation} route={route} />;
+            }}
+            // It wants a function as a value it automatically receive two parameter
+            // items and index. It will get a item key and it will attach that key (id) to the item
+            // rendered within the FlatList.
+            keyExtractor={(item) => {
+              return item.id;
+            }}
+          />
 
-      <TouchableOpacity
-        style={styles.touchableStyle}
-        activeOpacity={0.8}
-        onPress={() => navigation.replace('LoginForm')}
-      >
-        <Text style={styles.button}>Go Back!!!</Text>
-      </TouchableOpacity>
-    </View>
+          <TouchableOpacity
+            style={styles.touchableStyle}
+            activeOpacity={0.8}
+            onPress={() => navigation.replace('LoginForm')}
+          >
+            <Text style={styles.button}>Go Back!!!</Text>
+          </TouchableOpacity>
+        </LinearGradient>
+      </View>
+    </>
   );
 };
 
@@ -89,9 +104,10 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   touchableStyle: {
-    marginBottom: 5,
+    // marginBottom: 5,
   },
   screen: {
-    flex: 1
+    flex: 1,
+
   }
 });

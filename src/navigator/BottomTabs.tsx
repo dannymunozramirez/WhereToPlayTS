@@ -5,6 +5,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { NavigatorScreens } from './Navigator';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { MyTeam } from '../screens/MyTeam';
+import { ChallengeAct } from '../screens/challenge/ChallengeAct';
+import { Challenge } from '../screens/challenge/Challenge';
+import { ChallengeProfile } from '../screens/challenge/ChallengeProfile';
 
 const MaterialTab = createMaterialBottomTabNavigator();
 
@@ -69,20 +72,20 @@ export const BottomTabsChallenge = () => {
     return (
         <MaterialTab.Navigator
             activeColor="#2071B2"
-            barStyle={{ backgroundColor: 'lightseagreen' }}>
-            <Tab.Screen name="Activities" component={NavigatorScreens} options={{
+            barStyle={{ backgroundColor: 'lightgreen' }}>
+            <Tab.Screen name="Activities" component={ChallengeAct} options={{
                 tabBarLabel: 'Challenge Activity',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="home" color={color} size={22} />
                 ),
             }} />
-            <Tab.Screen name="My Team" component={MyTeam} options={{
+            <Tab.Screen name="My Team" component={Challenge} options={{
                 tabBarLabel: 'Challenge',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="bell" color={color} size={22} />
                 ),
             }} />
-            <Tab.Screen name="ProfileScreen" component={ProfileScreen} options={{
+            <Tab.Screen name="ProfileScreen" component={ChallengeProfile} options={{
                 tabBarLabel: 'Profile',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="account" color={color} size={22} />

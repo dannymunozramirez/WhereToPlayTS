@@ -1,20 +1,13 @@
-import { createStackNavigator, StackScreenProps } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 import { ActivitiesScreen } from '../screens/ActivitiesScreen';
 import React from 'react';
 import GameDetails from '../screens/GameDetails';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MyTeam } from '../screens/MyTeam';
 import { LoginForm } from '../screens/LoginForm';
 import { SideMenu } from './SideMenu';
 
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
-const Drawer = createDrawerNavigator();
-
-const MaterialTab = createMaterialBottomTabNavigator();
 
 export const Navigator = () => {
     return (
