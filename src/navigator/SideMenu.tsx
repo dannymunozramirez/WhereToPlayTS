@@ -2,7 +2,7 @@ import React from 'react'
 
 import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView } from '@react-navigation/drawer'
 import { View, Image, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { BottomTabs, BottomTabsChallenge, BottomTabsOrganizer, BottomTabsTournament } from './BottomTabs';
+import { BottomTabsPlayer, BottomTabsChallenge, BottomTabsOrganizer, BottomTabsTeam, BottomTabsTournament } from './BottomTabs';
 
 const Drawer = createDrawerNavigator();
 
@@ -12,10 +12,12 @@ export const SideMenu = () => {
             screenOptions={{
                 drawerPosition: 'left'
             }} >
-            <Drawer.Screen name='BottomTabs' component={BottomTabs} />
-            <Drawer.Screen name='BottomTabsTournament' component={BottomTabsTournament} />
-            <Drawer.Screen name='BottomTabsChallenge' component={BottomTabsChallenge} />
-            <Drawer.Screen name='BottomTabsOrganizer' component={BottomTabsOrganizer} />
+            <Drawer.Screen name='Player Zone' component={BottomTabsPlayer} />
+            <Drawer.Screen name='Team Zone' component={BottomTabsTeam} />
+            <Drawer.Screen name='Challenge Zone' component={BottomTabsChallenge} />
+            <Drawer.Screen name='Organizer Zone' component={BottomTabsOrganizer} />
+            <Drawer.Screen name='Tournament Zone' component={BottomTabsTournament} />
+            <Drawer.Screen name='Settings' component={BottomTabsOrganizer} />
         </Drawer.Navigator>
     )
 }
@@ -34,17 +36,20 @@ const InMenu = ({ navigation }: DrawerContentComponentProps) => {
 
             {/* Menu options */}
             <View style={styles.menuContainer}>
-                <TouchableOpacity onPress={() => navigation.navigate('BottomTabs')} style={styles.menuButton}>
+                <TouchableOpacity onPress={() => navigation.navigate('Player Zone')} style={styles.menuButton}>
                     <Text style={styles.menuText}>Player Zone</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('BottomTabsTournament')} style={styles.menuButton}>
+                <TouchableOpacity onPress={() => navigation.navigate('Team Zone')} style={styles.menuButton}>
                     <Text style={styles.menuText}>Team Zone</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('BottomTabsChallenge')} style={styles.menuButton}>
+                <TouchableOpacity onPress={() => navigation.navigate('Challenge Zone')} style={styles.menuButton}>
                     <Text style={styles.menuText}>Challenge Zone</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('BottomTabsOrganizer')} style={styles.menuButton}>
+                <TouchableOpacity onPress={() => navigation.navigate('Organizer Zone')} style={styles.menuButton}>
                     <Text style={styles.menuText}>Organizer Zone</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Tournament Zone')} style={styles.menuButton}>
+                    <Text style={styles.menuText}>Tournament Zone</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('BottomTabsOrganizer')} style={styles.menuButton}>
                     <Text style={styles.menuText}>Settings</Text>

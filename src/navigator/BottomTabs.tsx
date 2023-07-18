@@ -2,29 +2,32 @@ import React from 'react'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { NavigatorScreens } from './Navigator';
+import { NavigatorScreensPlayerZone, NavigatorScreensTeamZone } from './Navigator';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { MyTeam } from '../screens/MyTeam';
 import { ChallengeAct } from '../screens/challenge/ChallengeAct';
 import { Challenge } from '../screens/challenge/Challenge';
 import { ChallengeProfile } from '../screens/challenge/ChallengeProfile';
+import { Team } from '../screens/team/Team';
+import { TeamProfile } from '../screens/team/TeamProfile';
+import { Tournament } from '../screens/tournament/Tournament';
 
 const MaterialTab = createMaterialBottomTabNavigator();
 
 const Tab = createBottomTabNavigator();
 
-export const BottomTabs = () => {
+export const BottomTabsPlayer = () => {
     return (
         <MaterialTab.Navigator
             activeColor="#2071B2"
             barStyle={{ backgroundColor: 'lightseagreen' }}>
-            <Tab.Screen name="Activities" component={NavigatorScreens} options={{
+            <Tab.Screen name="Activities" component={NavigatorScreensPlayerZone} options={{
                 tabBarLabel: 'Activities',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="home" color={color} size={22} />
                 ),
             }} />
-            <Tab.Screen name="My Team" component={MyTeam} options={{
+            <Tab.Screen name="My Team" component={Team} options={{
                 tabBarLabel: 'My Team',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="bell" color={color} size={22} />
@@ -41,25 +44,25 @@ export const BottomTabs = () => {
 };
 
 // BottomTabsTournament
-export const BottomTabsTournament = () => {
+export const BottomTabsTeam = () => {
     return (
         <MaterialTab.Navigator
             activeColor="#2071B2"
             barStyle={{ backgroundColor: '#9DF3C4' }}>
-            <Tab.Screen name="Activities" component={NavigatorScreens} options={{
-                tabBarLabel: 'Tournament',
+            <Tab.Screen name="Activities" component={NavigatorScreensTeamZone} options={{
+                tabBarLabel: 'Team Zone',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="home" color={color} size={22} />
                 ),
             }} />
             <Tab.Screen name="My Team" component={MyTeam} options={{
-                tabBarLabel: 'Teams',
+                tabBarLabel: 'Team',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="bell" color={color} size={22} />
                 ),
             }} />
-            <Tab.Screen name="Ranking" component={ProfileScreen} options={{
-                tabBarLabel: 'Ranking',
+            <Tab.Screen name="My Team Profile" component={TeamProfile} options={{
+                tabBarLabel: 'My Team Profile',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="account" color={color} size={22} />
                 ),
@@ -73,13 +76,13 @@ export const BottomTabsChallenge = () => {
         <MaterialTab.Navigator
             activeColor="#2071B2"
             barStyle={{ backgroundColor: 'lightseagreen' }}>
-            <Tab.Screen name="Activities" component={ChallengeAct} options={{
+            <Tab.Screen name="Activities" component={Challenge} options={{
                 tabBarLabel: 'Challenge Activity',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="home" color={color} size={22} />
                 ),
             }} />
-            <Tab.Screen name="My Team" component={Challenge} options={{
+            <Tab.Screen name="My Team" component={ChallengeAct} options={{
                 tabBarLabel: 'Challenge',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="bell" color={color} size={22} />
@@ -101,8 +104,35 @@ export const BottomTabsOrganizer = () => {
         <MaterialTab.Navigator
             activeColor="#2071B2"
             barStyle={{ backgroundColor: 'lightseagreen' }}>
-            <Tab.Screen name="Activities" component={NavigatorScreens} options={{
-                tabBarLabel: 'Game activities',
+            <Tab.Screen name="Activities" component={NavigatorScreensPlayerZone} options={{
+                tabBarLabel: 'Organizer activities',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="home" color={color} size={22} />
+                ),
+            }} />
+            <Tab.Screen name="My Team" component={MyTeam} options={{
+                tabBarLabel: 'Games organized',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="bell" color={color} size={22} />
+                ),
+            }} />
+            <Tab.Screen name="ProfileScreen" component={ProfileScreen} options={{
+                tabBarLabel: 'Profile',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="account" color={color} size={22} />
+                ),
+            }} />
+        </MaterialTab.Navigator>
+    );
+};
+
+export const BottomTabsTournament = () => {
+    return (
+        <MaterialTab.Navigator
+            activeColor="#2071B2"
+            barStyle={{ backgroundColor: 'lightseagreen' }}>
+            <Tab.Screen name="Activities" component={Tournament} options={{
+                tabBarLabel: 'Tournaments activities',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="home" color={color} size={22} />
                 ),
