@@ -11,6 +11,8 @@ import { Challenge } from '../screens/challenge/Challenge';
 import { ChallengeAct } from '../screens/challenge/ChallengeAct';
 import { ChallengeProfile } from '../screens/challenge/ChallengeProfile';
 import { Tournament } from '../screens/tournament/Tournament';
+import { Button, Text, View } from 'react-native';
+import { ModalSearchCard } from '../components/ModalSearchCard';
 
 
 const Stack = createStackNavigator();
@@ -29,6 +31,9 @@ export const NavigatorScreensPlayerZone = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Test" component={ActivitiesScreen} />
+            <Stack.Group screenOptions={{ presentation: 'modal' }}>
+                <Stack.Screen name="ModalSearchCard" component={ModalSearchCard} />
+            </Stack.Group>
             <Stack.Screen name="GameDetails">
                 {(props: any) => <GameDetails {...props} />}
             </Stack.Screen>

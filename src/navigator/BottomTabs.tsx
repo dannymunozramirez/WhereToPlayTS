@@ -11,11 +11,32 @@ import { ChallengeProfile } from '../screens/challenge/ChallengeProfile';
 import { Team } from '../screens/team/Team';
 import { TeamProfile } from '../screens/team/TeamProfile';
 import { Tournament } from '../screens/tournament/Tournament';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { ModalSearchCard } from '../components/ModalSearchCard';
 
 const MaterialTab = createMaterialBottomTabNavigator();
-
+const CreateNewPlaceholder = () => <View style={{ flex: 1, backgroundColor: 'blue' }} />
 const Tab = createBottomTabNavigator();
 
+const modalTest = () => {
+    return (
+        <View
+            style={{
+                flex: 1,
+                backgroundColor: "transparent",
+                alignItems: "center",
+                justifyContent: "center"
+            }}
+        >
+            <TouchableOpacity
+                style={{ backgroundColor: "white", padding: 20 }}
+                onPress={() => console.log("todo!")}
+            >
+                <Text>Modal me</Text>
+            </TouchableOpacity>
+        </View>
+    )
+}
 export const BottomTabsPlayer = () => {
     return (
         <MaterialTab.Navigator
@@ -27,6 +48,26 @@ export const BottomTabsPlayer = () => {
                     <MaterialCommunityIcons name="home" color={color} size={22} />
                 ),
             }} />
+
+
+            <MaterialTab.Screen
+                name="Create"
+                component={CreateNewPlaceholder}
+                options={{
+                    tabBarLabel: 'Search',
+                    tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="magnify" color={color} size={22} />
+                    ),
+                }}
+                listeners={({ navigation }: any) => ({
+                    tabPress: event => {
+                        event.preventDefault();
+                        navigation.navigate(ModalSearchCard);
+                    }
+                })}
+            />
+
+
             <Tab.Screen name="My Team" component={Team} options={{
                 tabBarLabel: 'My Team',
                 tabBarIcon: ({ color }) => (

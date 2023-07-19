@@ -5,6 +5,9 @@ import { StyleSheet, View } from 'react-native';
 import { SideMenu } from './src/navigator/SideMenu';
 import { Navigator } from './src/navigator/Navigator';
 import LinearGradient from 'react-native-linear-gradient';
+import { Provider } from "react-redux";
+import store from "./src/store/index";
+
 
 export const App = () => {
 
@@ -12,12 +15,14 @@ export const App = () => {
 
   return (
     <>
-      <View style={styles.container}>
-        <NavigationContainer >
-          <Navigator />
-          {/* <SideMenu/> */}
-        </NavigationContainer>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <NavigationContainer >
+            <Navigator />
+            {/* <SideMenu/> */}
+          </NavigationContainer>
+        </View>
+      </Provider>
     </>
 
   )

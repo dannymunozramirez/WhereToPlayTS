@@ -51,7 +51,7 @@ const InMenu = ({ navigation }: DrawerContentComponentProps) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Tournament Zone')} style={styles.menuButton}>
                     <Text style={styles.menuText}>Tournament Zone</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('BottomTabsOrganizer')} style={styles.menuButton}>
+                <TouchableOpacity onPress={() => navigation.navigate('Settings')} style={styles.menuButton}>
                     <Text style={styles.menuText}>Settings</Text>
                 </TouchableOpacity>
             </View>
